@@ -15,11 +15,11 @@ class LineReader
   public:
     LineReader lineReader;
     LineReader(char* buf, uint8_t bufSize);
+    int available();
 
   private:
     char* _buf;
     uint8_t _bufSize;
-    int available();
 };
 
 #endif
