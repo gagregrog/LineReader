@@ -13,7 +13,6 @@
 class LineReader
 {
   public:
-    LineReader lineReader;
     LineReader(char* buf, uint8_t bufSize);
     int available();
 
