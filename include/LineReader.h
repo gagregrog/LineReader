@@ -13,13 +13,13 @@
 class LineReader
 {
   public:
-    LineReader lineReader;
     LineReader(char* buf, uint8_t bufSize);
-
+    int available();
+    bool matches(int num);
+    bool matches(String str);
   private:
     char* _buf;
     uint8_t _bufSize;
-    int available();
 };
 
 #endif

@@ -14,7 +14,20 @@ LineReader::LineReader(char* buf, uint8_t bufSize)
   _bufSize = bufSize;
 }
 
-// Private Members
+// Public Members
+bool LineReader::matches(int num) {
+  // we do this, since we will return 0 for non-number serial input
+  if (!num) {
+    return matches("0");
+  }
+
+  return atoi(_buf) == num;
+}
+
+bool LineReader::matches(String str) {
+  return !strcmp(_buf, str.c_str());
+}
+
 int LineReader::available()
 {
   int readChar = Serial.read();
